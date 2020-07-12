@@ -1,9 +1,6 @@
 package io.kamlesh;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,6 +19,7 @@ public class MathUtilsTest {
     }
 
     @Test
+    @DisplayName("Testing Add Method")
     void testAdd(){
         int expected = 2;
         int actual = mathUtils.add(1,1);
@@ -29,6 +27,7 @@ public class MathUtilsTest {
     }
 
     @Test
+    @DisplayName("Testing Divide Method")
     void testDivide(){
         assertThrows( ArithmeticException.class, ()->mathUtils.divide(1,0));
     }
@@ -36,6 +35,13 @@ public class MathUtilsTest {
     @Test
     void testcomputeCircleArea(){
         assertEquals(314.1592653589793, mathUtils.computeCircleArea(10), "Should return right circle area");
+    }
+
+    @Test
+    @DisplayName("TDD Method. Should not run")
+    @Disabled
+    void testDisabled(){
+        fail("not yet implemented");
     }
 
     @AfterEach
