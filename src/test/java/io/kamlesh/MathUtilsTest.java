@@ -3,6 +3,7 @@ package io.kamlesh;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 public class MathUtilsTest {
 
@@ -29,6 +30,8 @@ public class MathUtilsTest {
     @Test
     @DisplayName("Testing Divide Method")
     void testDivide(){
+        boolean isServerUp = true;
+        assumeTrue(isServerUp);
         assertThrows( ArithmeticException.class, ()->mathUtils.divide(1,0));
     }
 
