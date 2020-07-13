@@ -28,6 +28,16 @@ public class MathUtilsTest {
     }
 
     @Test
+    @DisplayName("Multiply Method")
+    void multiply(){
+        assertAll(
+                () -> assertEquals(4,mathUtils.multiply(2,2)),
+                () -> assertEquals(0,mathUtils.multiply(2,0)),
+                () -> assertEquals(-2,mathUtils.multiply(-2,1))
+        );
+    }
+
+    @Test
     @DisplayName("Testing Divide Method")
     void testDivide(){
         boolean isServerUp = true;
